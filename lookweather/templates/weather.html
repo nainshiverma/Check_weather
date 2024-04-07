@@ -1,0 +1,56 @@
+{% extends "home.html" %}
+{% block start %}
+
+<div class="content_wrapper" id="app">
+	<div v-if="infos.city">
+		<h1>
+			Weather
+			<div class="date"></div>
+		</h1>
+		
+		
+		<form class="" method="get">
+			<input class ="form-control" name="city">
+			<button class="" type="submit">Sumbit</button>
+		</form>
+	
+
+		<div class="weather_card">
+			<div class="weather_card_img" :style="{backgroundImage: https://www.bing.com/images/search?view=detailV2&ccid=ro6DRVEW&id=4FEF478A9554C1F098B210FAC273906B7AFF752A&thid=OIP.ro6DRVEWUKbMXeIP-R79TgHaHa&mediaurl=https%3a%2f%2fmir-s3-cdn-cf.behance.net%2fproject_modules%2fdisp%2f01d9bc30971807.563b2b13c384b.gif&exph=600&expw=600&q=small+weather+image&simid=607996764967826866&FORM=IRPRST&ck=629D944AF7A7A8E73FC8816023A29E08&selectedIndex=9{{data.icon}}.png}">
+				<div class="weather_card_state">
+					<span class="material-icons">
+                    <img src="https://www.bing.com/images/search?view=detailV2&ccid=ro6DRVEW&id=4FEF478A9554C1F098B210FAC273906B7AFF752A&thid=OIP.ro6DRVEWUKbMXeIP-R79TgHaHa&mediaurl=https%3a%2f%2fmir-s3-cdn-cf.behance.net%2fproject_modules%2fdisp%2f01d9bc30971807.563b2b13c384b.gif&exph=600&expw=600&q=small+weather+image&simid=607996764967826866&FORM=IRPRST&ck=629D944AF7A7A8E73FC8816023A29E08&selectedIndex=9{{data.icon}}.png">
+					
+					</span>
+				</div>
+			</div>
+
+			<div class="weather_card_infos">
+				<div class="weather_card_infos_title">
+					{{data.city}}
+					<br>
+                    {{data.description}}
+					
+				</div>
+				<div class="weather_card_infos_temp">
+                    {{data.celcius_temperature}}°C /{{data.kelvin_temperature}}°k
+					
+				</div>
+				<div class="bottom">
+					<hr>
+					<div class="weather_card_infos_bottom">
+                        humidity:{{data.humidity}} - pressure:{{data.pressure}}Pa
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+
+{% endblock %}
